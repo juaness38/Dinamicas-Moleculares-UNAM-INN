@@ -1,0 +1,47 @@
+name: openmm-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  # Python
+  - python=3.10
+  
+  # OpenMM y herramientas de simulación
+  - openmm
+  - mdtraj
+  - mdanalysis
+  - parmed
+  
+  # Librerías científicas básicas
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - scikit-learn
+  
+  # Jupyter y notebooks
+  - jupyter
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+  
+  # Visualización molecular
+  - nglview
+  - py3dmol
+  
+  # Química computacional
+  - biopython
+  - rdkit
+  
+  # Análisis de datos
+  - seaborn
+  - plotly
+  
+  # Utilidades
+  - tqdm
+  - pytest
+  
+  # Pip packages (si es necesario)
+  - pip
+  - pip:
+    - pymol-open-source
