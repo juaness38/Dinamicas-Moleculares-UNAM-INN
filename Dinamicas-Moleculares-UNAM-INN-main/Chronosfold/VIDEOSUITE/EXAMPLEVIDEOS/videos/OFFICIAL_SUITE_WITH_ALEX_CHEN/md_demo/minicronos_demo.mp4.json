@@ -1,0 +1,10 @@
+{
+  "preset": "videosuite_md_demo",
+  "notes": "skipped: exit 127",
+  "inputs": {
+    "source": "VIDEOSUITE/md_demo/run_minicronos_demo.py",
+    "steps": 180,
+    "pred_steps": 60
+  },
+  "render": {}
+}

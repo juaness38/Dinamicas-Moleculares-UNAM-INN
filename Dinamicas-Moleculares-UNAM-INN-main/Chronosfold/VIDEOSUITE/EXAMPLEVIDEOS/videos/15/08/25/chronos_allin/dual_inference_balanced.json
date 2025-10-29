@@ -1,0 +1,12 @@
+{
+	"preset": "balanced",
+	"protein_id": "HP35_1YRF",
+	"result": {
+		"meta": {
+			"cli_samples_requested": 24,
+			"notes": "Placeholder content: dual inference not executed in this environment."
+		},
+		"minigpt": { "enabled": true, "status": "skipped" },
+		"diffusion": { "enabled": true, "status": "skipped" }
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "name": "04_spin_3d",
+  "protein": "6VXX",
+  "type": "placeholder",
+  "description": "Rotaci\u00f3n 3D de la estructura",
+  "status": "not_implemented",
+  "timestamp": "20250908_202215",
+  "note": "Requiere implementaci\u00f3n espec\u00edfica del preset"
+}

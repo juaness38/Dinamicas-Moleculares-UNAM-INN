@@ -1,0 +1,11 @@
+{
+  "name": "06_annotated3d",
+  "protein": "6VXX",
+  "type": "placeholder",
+  "status": "not_implemented",
+  "description": "Estructura 3D anotada",
+  "planned_frames": 80,
+  "planned_duration": 3.3,
+  "timestamp": "20250908_201029",
+  "note": "Este video requiere implementaci\u00f3n de preset espec\u00edfico"
+}

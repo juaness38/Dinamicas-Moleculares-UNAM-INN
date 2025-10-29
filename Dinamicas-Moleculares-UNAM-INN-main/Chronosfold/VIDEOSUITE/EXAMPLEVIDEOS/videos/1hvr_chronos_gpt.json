@@ -1,0 +1,38 @@
+{
+  "version": "1.0",
+  "preset": "chronos",
+  "run_id": "distill_1755305800_94f7fd",
+  "inputs": {
+    "run": {
+      "path": "distillation_runs\\distill_1755305800_94f7fd.run.json",
+      "sha256": "84576cd00d762871aabd3e022bfa1b7acfe94c26fc2dfd1c2a9202150fbb80c8"
+    },
+    "snapshots": {
+      "path": "distillation_runs\\distill_1755305800_94f7fd.snapshots.jsonl",
+      "sha256": "57f53409a5dc9c05d75bfdaff28f784420012cd6464bd3c73414f5160602d9b5"
+    },
+    "trajectories": {
+      "path": "distillation_runs\\distill_1755305800_94f7fd.trajectories.json",
+      "sha256": "2c0582174568aabdd960ad43edaf1f5dc4279077ed12b3ba67bb8d9d96ee0707"
+    }
+  },
+  "env": {
+    "astroflora_version": "8.0.0-REAL",
+    "python": "3.13.5"
+  },
+  "render": {
+    "fps": 24,
+    "frames": 150,
+    "codec": "libx264"
+  },
+  "metrics_summary": {
+    "gpt_gap_dtw_final": 0.17465463283994784,
+    "gpt_gap_rmsd_final": 0.32000000000000006,
+    "diff_gap_dtw_final": 0.17465463283994784,
+    "diff_gap_rmsd_final": 0.32000000000000006,
+    "frame_count": 150,
+    "steps": 30,
+    "protein_id": "KINASE_0000"
+  },
+  "notes": ""
+}

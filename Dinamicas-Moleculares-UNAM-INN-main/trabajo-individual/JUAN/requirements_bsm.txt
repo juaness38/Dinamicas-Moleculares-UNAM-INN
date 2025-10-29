@@ -1,0 +1,42 @@
+# Paquetes adicionales para el stack BSM (instalación via pip)
+# Ejecutar después de activar el entorno virtual o conda correspondiente.
+
+# Embeddings y NLP
+accelerate
+datasets
+huggingface-hub
+pubmedbert
+sentence-transformers
+transformers
+torchmetrics
+pytorch-lightning
+wandb
+
+# API / infraestructura BSM
+fastapi
+uvicorn[standard]
+starlette
+httpx
+pydantic
+python-dotenv
+typer
+click
+rich
+redis
+pymilvus
+neo4j
+neo4j-driver
+chromadb
+python-multipart
+
+aiofiles
+openmmtools
+# Tests y linting
+pytest
+pytest-asyncio
+pytest-cov
+black
+isort
+mypy
+pre-commit
+tabulate

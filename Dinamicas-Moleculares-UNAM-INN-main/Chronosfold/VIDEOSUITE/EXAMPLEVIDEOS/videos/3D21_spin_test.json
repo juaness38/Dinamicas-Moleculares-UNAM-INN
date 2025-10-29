@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "preset": "spin",
+  "run_id": null,
+  "inputs": {
+    "pdb": {
+      "path": "3D21.pdb",
+      "sha256": "3b0a42a5f04c56e8f21dd3e81bd10249c740e91165ff397f6188a40899f47a9b"
+    }
+  },
+  "env": {
+    "astroflora_version": "8.0.0-REAL",
+    "python": "3.13.5"
+  },
+  "render": {
+    "fps": 15,
+    "frames": 60,
+    "codec": "libx264"
+  },
+  "metrics_summary": {},
+  "notes": ""
+}

@@ -1,0 +1,20 @@
+# Superset of dependencies for all VIDEO SUITE pipelines.
+# Install only what you need; optional groups are marked.
+
+# 2D plotting/animation
+matplotlib
+seaborn
+imageio
+Pillow
+
+# MD demo
+openmm
+mdtraj
+scikit-learn
+numpy
+
+# Milvus (optional)
+pymilvus
+
+# PyMOL integration (install pymol-open-source via system/conda; pip wheel availability varies)
+# pymol-open-source  # often installed via apt/conda, not pip

@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "preset": "alex_chen",
+  "inputs": {
+    "pdb": "6VXX.pdb",
+    "color_scheme": "density",
+    "pipeline": "Alex Chen Breakthrough",
+    "variance_explained": 0.250651696537995
+  },
+  "render": {
+    "fps": 8,
+    "frames": 100,
+    "duration": 12.5,
+    "file_size_mb": 0.4448966979980469
+  },
+  "notes": "Alex Chen breakthrough pipeline with density coloring. Star markers indicate novel conformations.",
+  "env": {
+    "python": "3.13.5"
+  }
+}

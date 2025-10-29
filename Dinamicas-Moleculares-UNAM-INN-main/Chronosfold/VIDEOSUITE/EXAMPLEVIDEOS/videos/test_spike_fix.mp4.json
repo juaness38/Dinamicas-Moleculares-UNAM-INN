@@ -1,0 +1,28 @@
+{
+  "version": "1.0",
+  "preset": "spike_scatter2d",
+  "protein": {
+    "id": "6VXX_SARS_CoV2_Spike",
+    "ca_atoms": 2916,
+    "source": "6VXX.pdb"
+  },
+  "render": {
+    "fps": 24,
+    "frames": 30,
+    "codec": "libx264",
+    "size": [
+      1200,
+      960
+    ],
+    "color_by": "novelty"
+  },
+  "analysis": {
+    "novelty_events": 1,
+    "novelty_indices": [
+      18
+    ]
+  },
+  "generator": "spike_video_generator.py",
+  "timestamp": "2025-09-08T14:13:11.862804",
+  "notes": "SARS-CoV-2 Spike protein conformational analysis with ChronosFold"
+}

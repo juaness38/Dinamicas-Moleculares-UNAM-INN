@@ -1,0 +1,9 @@
+{
+  "name": "08_rama_timeline",
+  "protein": "6VXX",
+  "type": "placeholder",
+  "description": "Diagrama Ramachandran temporal",
+  "status": "not_implemented",
+  "timestamp": "20250908_202215",
+  "note": "Requiere implementaci\u00f3n espec\u00edfica del preset"
+}

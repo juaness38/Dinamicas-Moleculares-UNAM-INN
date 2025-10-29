@@ -1,0 +1,24 @@
+{
+  "suite_type": "simple_unified",
+  "protein": "6VXX",
+  "timestamp": "20250908_201755",
+  "total": 12,
+  "successful": 8,
+  "failed": 4,
+  "successful_videos": [
+    "01_scatter2d_novelty",
+    "02_scatter2d_time",
+    "03_scatter2d_density",
+    "04_spin_3d",
+    "05_trajectory",
+    "06_annotated3d",
+    "07_rmsf_colormap",
+    "08_rama_timeline"
+  ],
+  "failed_videos": [
+    "09_chronos_novelty",
+    "10_chronos_density",
+    "11_chronos_temporal",
+    "12_chronos_gpt"
+  ]
+}

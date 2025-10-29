@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "preset": "rama_timeline",
+  "protein": {
+    "id": "6VXX_SARS_CoV2_Spike",
+    "source": "6VXX.pdb"
+  },
+  "render": {
+    "frames": 110,
+    "fps": 24,
+    "duration_seconds": 4.6,
+    "codec": "libx264"
+  },
+  "status": "placeholder",
+  "description": "Diagrama Ramachandran temporal",
+  "notes": "Video placeholder - implementaci\u00f3n pendiente",
+  "timestamp": "2025-09-08T13:56:43.570037"
+}

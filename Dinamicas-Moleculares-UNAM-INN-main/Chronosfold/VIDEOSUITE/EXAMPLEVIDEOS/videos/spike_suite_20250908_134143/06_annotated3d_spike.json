@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "preset": "annotated3d",
+  "protein": {
+    "id": "6VXX_SARS_CoV2_Spike",
+    "source": "6VXX.pdb"
+  },
+  "render": {
+    "frames": 80,
+    "fps": 24,
+    "duration_seconds": 3.3,
+    "codec": "libx264"
+  },
+  "status": "placeholder",
+  "description": "Estructura 3D anotada",
+  "notes": "Video placeholder - implementaci\u00f3n pendiente",
+  "timestamp": "2025-09-08T13:56:43.567340"
+}

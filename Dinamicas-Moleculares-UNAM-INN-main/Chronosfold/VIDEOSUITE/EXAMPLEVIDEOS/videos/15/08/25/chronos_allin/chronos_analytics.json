@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "preset": "chronos",
+  "run_id": "distill_1755281443_c48164",
+  "inputs": {
+    "run": {
+      "path": "distillation_runs\\distill_1755281443_c48164.run.json",
+      "sha256": "ad4a17ee5671fdad7ebd3b8480565944e77f94de7b83b2e3de6e99dba9aeffe3"
+    },
+    "snapshots": {
+      "path": "distillation_runs\\distill_1755281443_c48164.snapshots.jsonl",
+      "sha256": "b6e13b4af2fda894ddbf0b23cbf1c05afe9deed69a36c5d45dcf2af2ab4b814a"
+    },
+    "trajectories": {
+      "path": "distillation_runs\\distill_1755281443_c48164.trajectories.json",
+      "sha256": "54f8d711f06248ce08a2707593ed58f42dbda6766f9361df3349507d66b07243"
+    }
+  },
+  "env": {
+    "python": "3.11.13"
+  },
+  "render": {
+    "fps": 24,
+    "frames": 150,
+    "codec": "libx264"
+  },
+  "metrics_summary": {
+    "frame_count": 150,
+    "steps": 30,
+    "protein_id": "HP35_1YRF"
+  },
+  "notes": "sidecar written post-hoc"
+}

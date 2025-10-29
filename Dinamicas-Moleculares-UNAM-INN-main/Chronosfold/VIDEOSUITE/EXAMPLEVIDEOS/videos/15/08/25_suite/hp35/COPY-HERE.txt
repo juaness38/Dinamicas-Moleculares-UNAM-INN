@@ -1,0 +1,4 @@
+Copy from videos/15/08/25:
+- hp35_trajectory.mp4 -> trajectory.mp4
+- hp35_traj_scatter2d.mp4 -> traj_scatter2d.mp4
+- hp35_annotated3d.mp4 -> annotated3d.mp4

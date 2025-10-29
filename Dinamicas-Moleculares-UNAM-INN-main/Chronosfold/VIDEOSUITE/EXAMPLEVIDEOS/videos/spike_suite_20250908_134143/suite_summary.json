@@ -1,0 +1,73 @@
+{
+  "suite_info": {
+    "protein_id": "6VXX_SARS_CoV2_Spike",
+    "timestamp": "20250908_134143",
+    "directory": "videos\\spike_suite_20250908_134143",
+    "total_videos": 0,
+    "real_videos": 0,
+    "placeholders": 0,
+    "failed_videos": 8,
+    "last_updated": "2025-09-08T14:12:37.291021",
+    "generator_used": "generate_spike_video.py",
+    "style": "ChronosGPT_black_background"
+  },
+  "videos": [
+    {
+      "name": "04_spin_3d",
+      "path": "videos\\spike_suite_20250908_134143\\04_spin_3d_spike.json",
+      "type": "placeholder",
+      "size_mb": 0,
+      "frames": 120,
+      "fps": 24,
+      "description": "Rotaci\u00f3n 3D de la estructura spike"
+    },
+    {
+      "name": "05_trajectory",
+      "path": "videos\\spike_suite_20250908_134143\\05_trajectory_spike.json",
+      "type": "placeholder",
+      "size_mb": 0,
+      "frames": 100,
+      "fps": 24,
+      "description": "Trayectoria molecular din\u00e1mica"
+    },
+    {
+      "name": "06_annotated3d",
+      "path": "videos\\spike_suite_20250908_134143\\06_annotated3d_spike.json",
+      "type": "placeholder",
+      "size_mb": 0,
+      "frames": 80,
+      "fps": 24,
+      "description": "Estructura 3D anotada"
+    },
+    {
+      "name": "07_rmsf_colormap",
+      "path": "videos\\spike_suite_20250908_134143\\07_rmsf_colormap_spike.json",
+      "type": "placeholder",
+      "size_mb": 0,
+      "frames": 90,
+      "fps": 24,
+      "description": "Mapa de flexibilidad RMSF"
+    },
+    {
+      "name": "08_rama_timeline",
+      "path": "videos\\spike_suite_20250908_134143\\08_rama_timeline_spike.json",
+      "type": "placeholder",
+      "size_mb": 0,
+      "frames": 110,
+      "fps": 24,
+      "description": "Diagrama Ramachandran temporal"
+    }
+  ],
+  "failed": [
+    "01_scatter2d_novelty",
+    "02_scatter2d_temporal",
+    "03_scatter2d_density",
+    "04_spin_3d",
+    "05_trajectory",
+    "06_annotated3d",
+    "07_rmsf_colormap",
+    "08_rama_timeline"
+  ],
+  "notes": "Suite parcial con videos reales (scatter2d) y placeholders para presets pendientes",
+  "real_videos": []
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "preset": "trajectory",
+  "protein": {
+    "id": "6VXX_SARS_CoV2_Spike",
+    "source": "6VXX.pdb"
+  },
+  "render": {
+    "frames": 100,
+    "fps": 24,
+    "duration_seconds": 4.2,
+    "codec": "libx264"
+  },
+  "status": "placeholder",
+  "description": "Trayectoria molecular din\u00e1mica",
+  "notes": "Video placeholder - implementaci\u00f3n pendiente",
+  "timestamp": "2025-09-08T13:56:43.566167"
+}

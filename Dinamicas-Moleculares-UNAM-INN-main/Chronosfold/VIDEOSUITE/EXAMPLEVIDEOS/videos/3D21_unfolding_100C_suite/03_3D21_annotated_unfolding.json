@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "preset": "annotated3d",
+  "run_id": null,
+  "inputs": {
+    "pdb": {
+      "path": "outputs/3D21_unfolding_100C/topology.pdb",
+      "sha256": "4a39f006d5144ce2e712d06366bf4d461faa4dd2c228c3b87d985945ca82d2cf"
+    },
+    "dcd": {
+      "path": "outputs/3D21_unfolding_100C/trajectory.dcd",
+      "sha256": "fb26f4db28599bf93b9f2b24e6f2194984b2578abe8036d552e17c82e58ab3c4"
+    }
+  },
+  "env": {
+    "astroflora_version": "8.0.0-REAL",
+    "python": "3.13.5"
+  },
+  "render": {
+    "fps": 15,
+    "frames": 80,
+    "codec": "libx264"
+  },
+  "metrics_summary": {
+    "rmsd_mean": 11.595754623413086,
+    "rg_mean": 30.87009188979128
+  },
+  "notes": ""
+}

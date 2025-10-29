@@ -1,0 +1,108 @@
+name: bsm-lancad-env
+channels:
+  - pyg
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  # Python core
+  - python=3.11
+  - pip
+
+  # Scientific stack
+  - numpy
+  - scipy
+  - pandas
+  - scikit-learn
+  - scikit-image
+  - matplotlib
+  - seaborn
+  - plotly
+  - sympy
+  - h5py
+  - networkx
+
+  # Notebook toolchain
+  - jupyter
+  - jupyterlab
+  - ipykernel
+  - ipywidgets
+  - nb_conda_kernels
+
+  # Molecular dynamics & chemistry
+  - openmm
+  - mdtraj
+  - mdanalysis
+  - mdanalysis-tests
+  - parmed
+  - biopython
+  - rdkit
+  - nglview
+  - py3dmol
+  - pymol-open-source
+  - propka
+  - pdb2pqr
+  - pymbar
+
+  # Deep learning & embeddings
+  - pytorch=2.3.*
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=12.1
+  - pyg=2.5.*
+
+  # Application infrastructure (BSM)
+  - fastapi
+  - uvicorn
+  - starlette
+  - httpx
+  - pydantic
+  - python-dotenv
+  - typer
+  - click
+  - rich
+  - redis
+  - neo4j
+  - pymilvus
+  - sqlalchemy
+  - boto3
+  - s3fs
+
+  # Testing & linting
+  - pytest
+  - pytest-asyncio
+  - pytest-cov
+  - black
+  - isort
+  - mypy
+  - pre-commit
+
+  # Misc utilities
+  - tqdm
+  - psutil
+  - tabulate
+  - pip-tools
+
+  # Pip-only packages
+  - pip:
+    - accelerate
+    - datasets
+    - huggingface-hub
+    - pubmedbert
+    - sentence-transformers
+    - torchmetrics
+    - pytorch-lightning
+    - transformers
+    - wandb
+    - python-multipart
+    - torch-geometric-temporal
+    - torch-scatter
+    - torch-sparse
+    - torch-cluster
+    - torch-spline-conv
+    - pyg-lib
+    - aiofiles
+    - chromadb
+    - neo4j-driver
+    - openmmtools

@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "preset": "scatter2d",
+  "run_id": null,
+  "inputs": {
+    "source": {
+      "path": "synthetic",
+      "sha256": null
+    }
+  },
+  "env": {
+    "astroflora_version": "8.0.0-REAL",
+    "python": "3.13.6"
+  },
+  "render": {
+    "fps": 24,
+    "frames": 200,
+    "codec": "libx264"
+  },
+  "metrics_summary": {},
+  "notes": "color_by=novelty"
+}

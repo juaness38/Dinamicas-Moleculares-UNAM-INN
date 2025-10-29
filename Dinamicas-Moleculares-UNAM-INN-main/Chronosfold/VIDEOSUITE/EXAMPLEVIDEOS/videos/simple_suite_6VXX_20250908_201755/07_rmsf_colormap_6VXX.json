@@ -1,0 +1,8 @@
+{
+  "name": "07_rmsf_colormap",
+  "protein": "6VXX",
+  "type": "placeholder",
+  "description": "Mapa de flexibilidad RMSF",
+  "status": "not_implemented",
+  "timestamp": "20250908_201755"
+}

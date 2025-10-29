@@ -1,0 +1,4 @@
+MD frames: 180
+Milvus states: 0
+Generated steps: 60
+Config: {'d_model': 96, 'n_layers': 3, 'n_heads': 4, 'dropout': 0.1, 'context_len': 32, 'epochs': 6, 'batch_size': 48}

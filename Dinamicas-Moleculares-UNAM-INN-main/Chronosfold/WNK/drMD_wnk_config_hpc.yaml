@@ -1,0 +1,214 @@
+# ============================================================================
+# drMD Configuration for WNK1 Kinase Domain
+# OPTIMIZADO PARA HPC: 2x Intel Xeon E5-2695 v2 (48 cores total)
+# ============================================================================
+# 
+# Hardware Target:
+#   - 2 sockets × 12 cores/socket = 24 physical cores
+#   - Hyperthreading: 48 logical CPUs
+#   - NUMA architecture (2 nodes)
+#
+# Parallel Strategy:
+#   - parallelCPU: 4 simulaciones simultáneas (una por cada 12 cores)
+#   - subprocessCpus: 12 cores por simulación
+#   - Total: 4 × 12 = 48 cores utilizados
+#
+# PBS Buffer Conditions:
+#   - 137 mM NaCl, 2.7 mM KCl (aproximado como 163 mM Na+/Cl-)
+#   - 10 mM Na2HPO4, 1.8 mM KH2PO4 (pH 7.4)
+#   - Temperature: 310 K (37°C)
+#
+# ============================================================================
+
+# ============================================================================
+# CONFIGURATION METADATA
+# ============================================================================
+metadata:
+  project: "WNK1_kinase_domain"
+  description: "WNK1 kinase in PBS buffer (pH 7.4) - HPC optimized"
+  author: "Dinamicas-Moleculares-UNAM-INN"
+  date: "2024"
+  hpc_target: "2x Intel Xeon E5-2695 v2 (48 cores)"
+
+# ============================================================================
+# PARALLEL EXECUTION (HPC Optimization)
+# ============================================================================
+parallelization:
+  parallelCPU: 4              # 4 simulaciones en paralelo
+  subprocessCpus: 12          # 12 cores por simulación
+  numa_aware: true            # Enable NUMA binding
+  numa_strategy: "socket"     # Bind each simulation to one socket
+
+# ============================================================================
+# INPUT STRUCTURE
+# ============================================================================
+structure:
+  pdb: "prepared_system/equilibrated.pdb"  # Sistema ya equilibrado con PBS
+  
+# ============================================================================
+# FORCE FIELD
+# ============================================================================
+forcefield:
+  protein: "amber14-all.xml"
+  water: "amber14/tip3p.xml"
+  
+# ============================================================================
+# SIMULATION STAGES
+# ============================================================================
+stages:
+  
+  # --------------------------------------------------------------------------
+  # STAGE 1: Energy Minimization
+  # --------------------------------------------------------------------------
+  - name: "minimization"
+    type: "minimization"
+    steps: 10000
+    tolerance: 10.0  # kJ/mol/nm
+    restraints:
+      backbone:
+        force_constant: 1000.0  # kJ/mol/nm²
+        selection: "protein and backbone"
+    
+  # --------------------------------------------------------------------------
+  # STAGE 2: NVT Equilibration (Heating)
+  # --------------------------------------------------------------------------
+  - name: "nvt_equilibration"
+    type: "md"
+    ensemble: "NVT"
+    temperature: 310  # K (37°C - fisiológico)
+    steps: 100000     # 100k steps × 2 fs = 200 ps
+    timestep: 0.002   # 2 fs
+    
+    # PBS buffer ya está en el PDB (163 mM Na+/Cl-)
+    # pH 7.4 (estados de protonación via ProPKa)
+    
+    restraints:
+      backbone:
+        force_constant: 1000.0  # kJ/mol/nm²
+        selection: "protein and backbone"
+    
+    output:
+      trajectory: "nvt_equilibration.dcd"
+      interval: 1000  # Guardar cada 1000 steps (2 ps)
+      
+  # --------------------------------------------------------------------------
+  # STAGE 3: NPT Equilibration (Pressure coupling)
+  # --------------------------------------------------------------------------
+  - name: "npt_equilibration"
+    type: "md"
+    ensemble: "NPT"
+    temperature: 310  # K
+    pressure: 1.0     # bar
+    steps: 250000     # 250k steps × 2 fs = 500 ps
+    timestep: 0.002   # 2 fs
+    
+    restraints:
+      backbone:
+        force_constant: 500.0  # kJ/mol/nm² (reducido)
+        selection: "protein and backbone"
+    
+    output:
+      trajectory: "npt_equilibration.dcd"
+      interval: 1000
+      
+  # --------------------------------------------------------------------------
+  # STAGE 4: Production MD
+  # --------------------------------------------------------------------------
+  - name: "production"
+    type: "md"
+    ensemble: "NPT"
+    temperature: 310  # K (37°C)
+    pressure: 1.0     # bar
+    steps: 25000000   # 25M steps × 2 fs = 50 ns
+    timestep: 0.002   # 2 fs
+    
+    # Sin restraints (producción libre)
+    
+    output:
+      trajectory: "production.dcd"
+      interval: 5000  # Guardar cada 5000 steps (10 ps) → 5000 frames
+      state: "state.xml"
+      checkpoint: "checkpoint.chk"
+      checkpoint_interval: 50000  # Checkpoint cada 100 ps
+
+# ============================================================================
+# INTEGRATION PARAMETERS
+# ============================================================================
+integrator:
+  type: "LangevinMiddle"
+  friction: 1.0  # 1/ps
+  
+# ============================================================================
+# NONBONDED INTERACTIONS
+# ============================================================================
+nonbonded:
+  cutoff: 1.0  # nm
+  switching_distance: 0.9  # nm
+  pme: true    # Particle Mesh Ewald para electrostática
+  pme_tolerance: 0.0005
+  
+# ============================================================================
+# CONSTRAINTS
+# ============================================================================
+constraints:
+  hydrogen_bonds: true  # Constrain H-bonds (permite dt=2fs)
+  water_model: "rigid"  # TIP3P rígido
+  
+# ============================================================================
+# PLATFORM (OpenMM)
+# ============================================================================
+platform:
+  name: "CPU"
+  precision: "mixed"  # Mixed precision (performance/accuracy balance)
+  
+# ============================================================================
+# OUTPUT & LOGGING
+# ============================================================================
+output:
+  base_directory: "drMD_simulations"
+  log_level: "INFO"
+  energy_report_interval: 1000  # Cada 1000 steps
+  
+# ============================================================================
+# ANALYSIS (Post-processing)
+# ============================================================================
+analysis:
+  clustering: true
+  cluster_method: "kmeans"
+  n_clusters: 10
+  
+  rmsd: true
+  rmsd_selection: "protein and backbone"
+  
+  rmsf: true
+  rmsf_selection: "protein and name CA"
+  
+  contacts: true
+  contact_cutoff: 0.45  # nm
+  
+# ============================================================================
+# ERROR HANDLING (drMD FirstAid)
+# ============================================================================
+error_handling:
+  enable_firstaid: true
+  max_retries: 3
+  
+# ============================================================================
+# NOTES
+# ============================================================================
+# PBS Buffer Implementation:
+#   - Aproximación: 163 mM Na+/Cl- (equivalente a PBS completo)
+#   - Estados de protonación: pH 7.4 via ProPKa (ya aplicado en prepare_system.py)
+#   - Forcefield: amber14-all.xml (no tiene K+ ni fosfatos)
+#   - Debye length: 0.76 nm (diferencia <4% vs PBS real)
+#
+# HPC Optimization:
+#   - 4 simulaciones paralelas × 12 cores = 48 cores
+#   - NUMA-aware: cada simulación en un socket si es posible
+#   - Production: 50 ns × 4 parallel = 200 ns total throughput
+#
+# Performance Estimate:
+#   - ~100 ns/day en CPU (single simulation, 12 cores)
+#   - Con 4 parallel: ~400 ns/day total throughput
+#   - 50 ns production: ~12 hours wall time
+# ============================================================================

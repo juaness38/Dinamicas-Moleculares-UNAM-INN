@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "preset": "spin",
+  "run_id": null,
+  "inputs": {
+    "pdb": {
+      "path": "outputs/3D21_unfolding_100C/topology.pdb",
+      "sha256": "4a39f006d5144ce2e712d06366bf4d461faa4dd2c228c3b87d985945ca82d2cf"
+    }
+  },
+  "env": {
+    "astroflora_version": "8.0.0-REAL",
+    "python": "3.13.5"
+  },
+  "render": {
+    "fps": 24,
+    "frames": 120,
+    "codec": "libx264"
+  },
+  "metrics_summary": {},
+  "notes": ""
+}

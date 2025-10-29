@@ -1,0 +1,29 @@
+{
+  "version": "1.0",
+  "preset": "rama_timeline",
+  "run_id": null,
+  "inputs": {
+    "pdb": {
+      "path": "1hvr.pdb",
+      "sha256": "c8d3f238d3269a66823454d4681b71467b4677a18751ce094047961620b338cb"
+    },
+    "dcd": {
+      "path": "outputs/1hvr_trajectory.dcd",
+      "sha256": "e2d15dab7f6f0b3951b825ebaed228dd08c96ba64a73cbb0dfa30c4d963dcf68"
+    }
+  },
+  "env": {
+    "astroflora_version": "8.0.0-REAL",
+    "python": "3.13.5"
+  },
+  "render": {
+    "fps": 24,
+    "frames": 100,
+    "codec": "libx264"
+  },
+  "metrics_summary": {
+    "n_residues_phi": 196,
+    "n_residues_psi": 196
+  },
+  "notes": ""
+}

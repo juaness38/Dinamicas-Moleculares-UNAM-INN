@@ -1,0 +1,11 @@
+{
+  "timestamp": 1755264000,
+  "input_dim": 64,
+  "reduced_dim": 32,
+  "n_train_vectors": 64,
+  "training": {"final_loss": 0.0, "mean_loss": 0.0},
+  "n_samples": 8,
+  "codebook_k": 8,
+  "sample_state_diversity": 4,
+  "notes": "Synthetic placeholder: diffusion not executed in this run."
+}

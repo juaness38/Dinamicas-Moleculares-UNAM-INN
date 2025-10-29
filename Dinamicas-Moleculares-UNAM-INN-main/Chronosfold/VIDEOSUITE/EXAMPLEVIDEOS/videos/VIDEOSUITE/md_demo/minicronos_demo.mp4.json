@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "preset": "videosuite_md_demo",
+  "inputs": {"source": "placeholder", "steps": 180, "pred_steps": 60},
+  "render": {"fps": 12, "frames": 1, "codec": "libx264"},
+  "notes": "Synthetic placeholder: real MD demo not executed in this environment."
+}

@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "preset": "scatter2d",
+  "inputs": {
+    "generator": "scripts/scatter2d_video.py",
+    "color_by": "density",
+    "novelty_count": 3
+  },
+  "render": {
+    "fps": 24,
+    "frames": 100,
+    "codec": "libx264",
+    "size": [
+      960,
+      960
+    ]
+  },
+  "notes": "",
+  "env": {
+    "python": "3.13.5"
+  }
+}

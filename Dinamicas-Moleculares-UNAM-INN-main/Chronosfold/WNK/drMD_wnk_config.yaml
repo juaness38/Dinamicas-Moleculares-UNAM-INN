@@ -1,0 +1,121 @@
+# ============================================================================
+# drMD Configuration for WNK1 C-terminal Umbrella Sampling
+# ============================================================================
+# Este archivo configura drMD para preparar y simular WNK1 en condiciones PBS
+# Referencias:
+#   - drMD: https://github.com/wells-wood-research/drMD
+#   - WNK1 structure: 5DRB.pdb (rat, residues 194-483)
+#   - PBS buffer: 137 mM NaCl, 2.7 mM KCl, 10 mM phosphates
+# ============================================================================
+
+# PATH INFO
+pathInfo:
+  inputDir: "."  # Directorio con 5DRB.pdb
+  outputDir: "./drMD_output"  # Salida de simulaciones
+
+# HARDWARE INFO
+hardwareInfo:
+  platform: "CUDA"  # Usar GPU (cambiar a "CPU" si no hay GPU)
+  parallelCPU: 1  # Número de simulaciones en paralelo
+  subprocessCpus: 4  # CPUs por simulación
+
+# MISC INFO
+miscInfo:
+  pH: 7.4  # pH fisiológico (PBS)
+  firstAidMaxRetries: 3
+  boxGeometry: "cubic"
+  boxSize: 1.0  # 1.0 nm padding (equivalente a nuestro pipeline)
+  writeMyMethodsSection: true
+  skipPdbTriage: false
+  
+  # Guardar solo backbone para trayectorias ligeras
+  trajectorySelections:
+    - keyword: "backbone"
+
+# SIMULATION STEPS
+simulationInfo:
+  # ========================================================================
+  # PASO 1: Minimización de energía
+  # ========================================================================
+  - stepName: "minimization"
+    simulationType: "minimisation"
+    maxIterations: 1000
+    logInterval: 100
+    
+  # ========================================================================
+  # PASO 2: Equilibración NVT (300 K, 100 ps)
+  # ========================================================================
+  - stepName: "nvt_equilibration"
+    simulationType: "nvt"
+    temperature: 300  # K
+    duration: 100  # ps
+    timestep: 2  # fs
+    logInterval: 1000  # Cada 2 ps
+    
+  # ========================================================================
+  # PASO 3: Equilibración NPT (300 K, 1 bar, 100 ps)
+  # ========================================================================
+  - stepName: "npt_equilibration"
+    simulationType: "npt"
+    temperature: 300  # K
+    duration: 100  # ps
+    timestep: 2  # fs
+    logInterval: 1000
+    
+  # ========================================================================
+  # PASO 4: Producción NPT (300 K, 1 bar, 10 ns)
+  # ========================================================================
+  - stepName: "production"
+    simulationType: "npt"
+    temperature: 300  # K
+    duration: 10000  # ps = 10 ns
+    timestep: 2  # fs
+    logInterval: 5000  # Cada 10 ps
+    
+    # Restricciones para mantener estructura durante exploración inicial
+    restraintInfo:
+      # Restringir backbone para evitar desnaturalización
+      - restraintType: "positional"
+        parameters:
+          forceConstant: 1000  # kJ/mol/nm²
+          selection:
+            keyword: "backbone"
+
+# ============================================================================
+# AFTERCARE: Análisis post-simulación
+# ============================================================================
+aftercareInfo:
+  # Analizar endpoint de producción
+  endPointInfo:
+    - stepNames: ["production"]
+      removeAtoms: ["water", "ions"]
+  
+  # Clustering de conformaciones
+  clusterInfo:
+    - stepNames: ["production"]
+      removeAtoms: ["water", "ions"]
+      nClusters: 5  # 5 clusters de conformaciones
+      clusterBy: "backbone"  # Clusterizar por backbone RMSD
+
+# ============================================================================
+# NOTAS SOBRE PBS
+# ============================================================================
+# drMD usa OpenMM/AmberTools, que solo soporta Na+/Cl- en forcefields estándar
+# 
+# PBS real:
+#   - 137 mM NaCl
+#   - 2.7 mM KCl  ← K+ no soportado directamente
+#   - 10 mM Na₂HPO₄  ← HPO₄²⁻ no en forcefield
+#   - 1.8 mM KH₂PO₄  ← H₂PO₄⁻ no en forcefield
+#
+# APROXIMACIÓN:
+#   - Fuerza iónica equivalente: 0.163 M (solo Na+/Cl-)
+#   - pH 7.4 controlado con addHydrogens()
+#   - Para PBS exacto, necesitas forcefield custom (fuera del scope)
+#
+# SOLUCIÓN ALTERNATIVA:
+#   Si necesitas K+ y fosfatos:
+#   1. Usar PDBFixer para agregar iones manualmente
+#   2. Usar forcefield CHARMM (tiene más iones)
+#   3. Parametrizar HPO₄²⁻/H₂PO₄⁻ con GAFF/CGenFF
+# ============================================================================

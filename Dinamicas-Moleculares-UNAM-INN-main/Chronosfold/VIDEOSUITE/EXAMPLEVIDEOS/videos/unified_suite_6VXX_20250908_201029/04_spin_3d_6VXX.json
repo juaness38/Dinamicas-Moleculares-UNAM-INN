@@ -1,0 +1,11 @@
+{
+  "name": "04_spin_3d",
+  "protein": "6VXX",
+  "type": "placeholder",
+  "status": "not_implemented",
+  "description": "Rotaci\u00f3n 3D de la estructura",
+  "planned_frames": 120,
+  "planned_duration": 5.0,
+  "timestamp": "20250908_201029",
+  "note": "Este video requiere implementaci\u00f3n de preset espec\u00edfico"
+}

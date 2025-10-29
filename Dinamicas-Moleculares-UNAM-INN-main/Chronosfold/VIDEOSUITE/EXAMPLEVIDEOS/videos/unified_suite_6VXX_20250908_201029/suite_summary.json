@@ -1,0 +1,73 @@
+{
+  "suite_type": "unified_complete",
+  "protein": "6VXX",
+  "timestamp": "20250908_201029",
+  "total_videos": 12,
+  "successful": 8,
+  "failed": 4,
+  "videos": [
+    {
+      "name": "01_scatter2d_novelty",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\01_scatter2d_novelty_6VXX.mp4",
+      "type": "scatter2d_real",
+      "size_mb": 0.10761737823486328,
+      "frames": 100,
+      "fps": 24,
+      "description": "PCA 2D scatter con detecci\u00f3n de novedad"
+    },
+    {
+      "name": "02_scatter2d_time",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\02_scatter2d_time_6VXX.mp4",
+      "type": "scatter2d_real",
+      "size_mb": 0.09227466583251953,
+      "frames": 120,
+      "fps": 24,
+      "description": "Trayectoria temporal scatter 2D"
+    },
+    {
+      "name": "03_scatter2d_density",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\03_scatter2d_density_6VXX.mp4",
+      "type": "scatter2d_real",
+      "size_mb": 0.0906982421875,
+      "frames": 100,
+      "fps": 24,
+      "description": "Mapa de densidad conformacional"
+    },
+    {
+      "name": "04_spin_3d",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\04_spin_3d_6VXX.json",
+      "type": "placeholder",
+      "description": "Rotaci\u00f3n 3D de la estructura"
+    },
+    {
+      "name": "05_trajectory",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\05_trajectory_6VXX.json",
+      "type": "placeholder",
+      "description": "Trayectoria molecular din\u00e1mica"
+    },
+    {
+      "name": "06_annotated3d",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\06_annotated3d_6VXX.json",
+      "type": "placeholder",
+      "description": "Estructura 3D anotada"
+    },
+    {
+      "name": "07_rmsf_colormap",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\07_rmsf_colormap_6VXX.json",
+      "type": "placeholder",
+      "description": "Mapa de flexibilidad RMSF"
+    },
+    {
+      "name": "08_rama_timeline",
+      "path": "videos\\unified_suite_6VXX_20250908_201029\\08_rama_timeline_6VXX.json",
+      "type": "placeholder",
+      "description": "Diagrama Ramachandran temporal"
+    }
+  ],
+  "failed_videos": [
+    "09_chronos_novelty_predictions",
+    "10_chronos_density_map",
+    "11_chronos_temporal_evolution",
+    "12_chronos_gpt"
+  ]
+}

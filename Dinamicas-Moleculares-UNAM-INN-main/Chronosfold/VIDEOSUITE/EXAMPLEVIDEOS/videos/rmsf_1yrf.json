@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "preset": "rmsf_colormap",
+  "run_id": null,
+  "inputs": {
+    "pdb": {
+      "path": "outputs\\1yrf_unfold_smoke\\final.pdb",
+      "sha256": "0abbeca45b47c89428318f2aeb5705c9542bb276df27ea0856236cd04a090d43"
+    },
+    "dcd": {
+      "path": "outputs\\1yrf_unfold_smoke\\trajectory.dcd",
+      "sha256": "35e93af8b4f70c845ef98ad289f09223f3d2fa6f4182a548acbf22f6f1ff7751"
+    }
+  },
+  "env": {
+    "astroflora_version": "8.0.0-REAL",
+    "python": "3.13.5"
+  },
+  "render": {
+    "fps": 15,
+    "frames": 90,
+    "codec": "libx264"
+  },
+  "metrics_summary": {
+    "rmsf_min": 0.32502976059913635,
+    "rmsf_max": 1.2514744997024536,
+    "rmsf_mean": 0.5978298187255859
+  },
+  "notes": ""
+}

@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+  "preset": "rmsf_colormap",
+  "protein": {
+    "id": "6VXX_SARS_CoV2_Spike",
+    "source": "6VXX.pdb"
+  },
+  "render": {
+    "frames": 90,
+    "fps": 24,
+    "duration_seconds": 3.8,
+    "codec": "libx264"
+  },
+  "status": "placeholder",
+  "description": "Mapa de flexibilidad RMSF",
+  "notes": "Video placeholder - implementaci\u00f3n pendiente",
+  "timestamp": "2025-09-08T13:56:43.568744"
+}

@@ -1,0 +1,84 @@
+{
+  "timestamp": 1756687493.3124142,
+  "total_duration_seconds": 74.41238331794739,
+  "input_files": {
+    "pdb": "outputs/3D21_unfolding_100C/topology.pdb",
+    "dcd": "outputs/3D21_unfolding_100C/trajectory.dcd"
+  },
+  "video_count": 8,
+  "successful_count": 8,
+  "tasks": [
+    {
+      "task_id": 1,
+      "preset": "spin",
+      "description": "3D structure rotation (static)",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\01_3D21_structure_spin.mp4",
+      "success": true,
+      "stdout": "[video] wrote videos\\3D21_unfolding_100C_suite\\01_3D21_structure_spin.mp4 frames=120 fps=24\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\01_3D21_structure_spin.json\n",
+      "stderr": ""
+    },
+    {
+      "task_id": 2,
+      "preset": "trajectory",
+      "description": "3D unfolding trajectory animation",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\02_3D21_unfolding_trajectory.mp4",
+      "success": true,
+      "stdout": "[video] Using user-provided PDB: outputs/3D21_unfolding_100C/topology.pdb\n[video] Using user-provided PDB: outputs/3D21_unfolding_100C/topology.pdb\n[video] wrote videos\\3D21_unfolding_100C_suite\\02_3D21_unfolding_trajectory.mp4 frames=100 fps=20\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\02_3D21_unfolding_trajectory.json\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\n",
+      "stderr": ""
+    },
+    {
+      "task_id": 3,
+      "preset": "annotated3d",
+      "description": "3D trajectory with RMSD/Rg metrics",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\03_3D21_annotated_unfolding.mp4",
+      "success": true,
+      "stdout": "[video] Using user-provided PDB: outputs/3D21_unfolding_100C/topology.pdb\n[video] wrote videos\\3D21_unfolding_100C_suite\\03_3D21_annotated_unfolding.mp4 frames=80 fps=15\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\03_3D21_annotated_unfolding.json\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\n",
+      "stderr": ""
+    },
+    {
+      "task_id": 4,
+      "preset": "rmsf_colormap",
+      "description": "Flexibility per residue (color-coded)",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\04_3D21_flexibility_map.mp4",
+      "success": true,
+      "stdout": "[video] Using user-provided PDB: outputs/3D21_unfolding_100C/topology.pdb\n[video] wrote videos\\3D21_unfolding_100C_suite\\04_3D21_flexibility_map.mp4 frames=60 fps=12\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\04_3D21_flexibility_map.json\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\n",
+      "stderr": ""
+    },
+    {
+      "task_id": 5,
+      "preset": "rama_timeline",
+      "description": "Ramachandran plot evolution",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\05_3D21_ramachandran_evolution.mp4",
+      "success": true,
+      "stdout": "[video] Using user-provided PDB: outputs/3D21_unfolding_100C/topology.pdb\n[video] wrote videos\\3D21_unfolding_100C_suite\\05_3D21_ramachandran_evolution.mp4 frames=80 fps=15\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\05_3D21_ramachandran_evolution.json\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\n",
+      "stderr": ""
+    },
+    {
+      "task_id": 6,
+      "preset": "contactmap_time",
+      "description": "Residue contact map over time",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\06_3D21_contact_map_evolution.mp4",
+      "success": true,
+      "stdout": "[video] Using user-provided PDB: outputs/3D21_unfolding_100C/topology.pdb\n[video] wrote videos\\3D21_unfolding_100C_suite\\06_3D21_contact_map_evolution.mp4 frames=60 fps=12\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\06_3D21_contact_map_evolution.json\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\n",
+      "stderr": ""
+    },
+    {
+      "task_id": 7,
+      "preset": "traj_scatter2d",
+      "description": "2D PCA projection of trajectory",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\07_3D21_trajectory_2D_projection.mp4",
+      "success": true,
+      "stdout": "[video] Using user-provided PDB: outputs/3D21_unfolding_100C/topology.pdb\n[video] wrote videos\\3D21_unfolding_100C_suite\\07_3D21_trajectory_2D_projection.mp4 frames=100 fps=20\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\07_3D21_trajectory_2D_projection.json\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\ndcdplugin) detected standard 32-bit DCD file of native endianness\ndcdplugin) CHARMM format DCD file (also NAMD 2.1 and later)\n",
+      "stderr": ""
+    },
+    {
+      "task_id": 8,
+      "preset": "scatter2d",
+      "description": "Synthetic 2D trajectory (demo)",
+      "output_path": "videos\\3D21_unfolding_100C_suite\\08_synthetic_2D_demo.mp4",
+      "success": true,
+      "stdout": "[video] wrote videos\\3D21_unfolding_100C_suite\\08_synthetic_2D_demo.mp4 frames=150 fps=24 color_by=density\n[video] sidecar wrote videos\\3D21_unfolding_100C_suite\\08_synthetic_2D_demo.json\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "preset": "videosuite_2d",
+  "inputs": {
+    "source": "VIDEOSUITE/2d/run_2d_animation.py",
+    "color_by": "density"
+  },
+  "render": {
+    "fps": 24,
+    "frames": 240,
+    "codec": "libx264"
+  },
+  "notes": "",
+  "env": {
+    "python": "3.13.5"
+  }
+}
